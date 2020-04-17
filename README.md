@@ -4,7 +4,7 @@ Hello! This repository is designed to hold code related to the Wikidata Wikiproj
 
 Please feel free to pull request and suggest changes at any time. 
 
-# Goal of the repository
+## Goal of the repository
 
 Centralize code to facilitate collaborations and upgrades. Well, which kind of code?
 
@@ -13,7 +13,7 @@ Centralize code to facilitate collaborations and upgrades. Well, which kind of c
 
 Well, and any other code that you may think useful for this project
 
-# Structure of the repository
+## Structure of the repository
 
 The structure will be of a tree with 2 folders: a sandbox and a "production" folders. 
 
