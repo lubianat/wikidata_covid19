@@ -22,7 +22,7 @@ profile.set_preference("browser.helperApps.neverAsk.saveToDisk","text/csv")
 browser = webdriver.Firefox(profile)
 browser.get("https://covid.saude.gov.br/")
 
-#time.sleep(5) This line is necessary for bad internet service such as the one I have, but unecessary otherwise.
+time.sleep(5) #This line is necessary for bad internet service such as the one I have, but unecessary otherwise.
 
 browser.find_element_by_xpath('/html/body/app-root/ion-app/ion-router-outlet/app-home/ion-content/div[1]/div[2]/ion-button').click()
 time.sleep(10) #To let it finish downloading before closing instance.
