@@ -3,6 +3,7 @@ import os
 import glob
 import time
 from datetime import date
+import argparse
 
 '''
 This script is used to acquire the latest csv file from Min. da saúde. 
@@ -11,11 +12,27 @@ the solution I found was creating a bot browser instance to click their button, 
 change the name of the newest downloaded file to match the day it was retrived.
 '''
 
+# Arguments via command line give a bit more flexibility
+
+# Current implementation requires as input the full path ending with "/"
+# It can be improved for usability.
+parser = argparse.ArgumentParser(description='Argparse to pass commands via command line')
+
+parser.add_argument("--downdir",
+                    default='~/Documentos/Wikidata/wikidata_covid19/sandbox/data-by-state/Saude_csvs/',
+                    help="The directory to download the files to")
+arguments = parser.parse_args()
+download_directory = arguments.downdir
+print(download_directory)
+
+
+
+
 profile = webdriver.FirefoxProfile()
 profile.set_preference('browser.download.folderList', 2) # custom location
 profile.set_preference('browser.download.manager.showWhenStarting', False)
 #File pathing for download dir could be improved
-profile.set_preference('browser.download.dir', '~/Documentos/Wikidata/wikidata_covid19/sandbox/data-by-state/Saude_csvs/')
+profile.set_preference('browser.download.dir', download_directory)
 #Don't ask permission to download
 profile.set_preference("browser.helperApps.neverAsk.saveToDisk","text/csv")
 
@@ -29,8 +46,9 @@ time.sleep(10) #To let it finish downloading before closing instance.
 browser.close()
 
 #Change name of the latest file in directory
-list_of_files = glob.glob('./Saude_csvs/*csv') 
+list_of_files = glob.glob(download_directory + '*csv') 
+print(list_of_files)
 latest_file = max(list_of_files, key=os.path.getctime)
 current = latest_file
-newname = f"./Saude_csvs/{str(date.today())}.csv"
+newname = download_directory + str(date.today()) + ".csv"
 os.rename(current,newname)
