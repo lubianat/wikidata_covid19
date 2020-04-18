@@ -1,0 +1,15 @@
+CREATE
+LAST	Len	"Spike protein S1 [SARS-CoV-2]"
+LAST	Den	"protein of SARS-CoV-2"
+LAST	P31	Q78782478	P642	Q87917585	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTC2"	S813	+2020-11-04T00:00:00Z/11
+LAST	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTC2"	S813	+2020-11-04T00:00:00Z/11
+CREATE
+LAST	Len	"Spike protein S2"
+LAST	Den	"protein of SARS-CoV-2 (fragment 686-1273  of the spike glycoprotein)"
+LAST	P31	Q78782478	P642	Q87917585	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTC2"	S813	+2020-11-04T00:00:00Z/11
+LAST	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTC2"	S813	+2020-11-04T00:00:00Z/11
+CREATE
+LAST	Len	"Spike protein S2'"
+LAST	Den	"protein of SARS-CoV-2 (fragment 816-1273 of the spike glycoprotein) "
+LAST	P31	Q78782478	P642	Q87917585	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTC2"	S813	+2020-11-04T00:00:00Z/11
+LAST	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTC2"	S813	+2020-11-04T00:00:00Z/11

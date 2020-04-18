@@ -1,0 +1,22 @@
+Column	Type	Positions	Description	qid_updated	ID	Column2	PDB ID
+	chain	1-7096	Replicase polyprotein 1ab		PRO_0000449618		P0DTD1
+	chain	1-180	Host translation inhibitor nsp1 [SARS-CoV-2]	Q90038952	PRO_0000449619		P0DTD1
+	chain	181-818	Non-structural protein 2 [SARS-CoV-2]	Q90038984	PRO_0000449620		P0DTD1
+	chain	819-2763	papain-like proteinase [SARS-Cov]	Q89560425	PRO_0000449621		P0DTD1
+	chain	2764-3263	Non-structural protein 4 [SARS-CoV-2]	Q90038956	PRO_0000449622		P0DTD1
+	chain	3264-3569	3C-like proteinase [SARS-CoV-2]	Q87917582	PRO_0000449623		P0DTD1
+	chain	3570-3859	Non-structural protein 6 [SARS-CoV-2]	Q88656943	PRO_0000449624		P0DTD1
+	chain	3860-3942	Non-structural protein 7 [SARS-CoV-2]	Q90038963	PRO_0000449625		P0DTD1
+	chain	3943-4140	Non-structural protein 8 [SARS-CoV-2]	Q88659350	PRO_0000449626		P0DTD1
+	chain	4141-4253	Non-structural protein 9 [SARS-CoV-2]	Q90038981	PRO_0000449627		P0DTD1
+	chain	4254-4392	Non-structural protein 10 [SARS-CoV-2]	Q90042394	PRO_0000449628		P0DTD1
+	chain	4393-5324	RNA-directed RNA polymerase [SARS-CoV-2]	Q90042395	PRO_0000449629		P0DTD1
+	chain	5325-5925	Helicase [SARS-CoV-2]	Q90042799	PRO_0000449630		P0DTD1
+	chain	5926-6452	Proofreading exoribonuclease [SARS-CoV-2]	Q90042407	PRO_0000449631		P0DTD1
+	chain	6453-6798	Uridylate-specific endoribonuclease [SARS-CoV-2]	Q90042811	PRO_0000449632		P0DTD1
+	chain	6799-7096	2'-O-methyltransferase [SARS-CoV-2]	Q87917580	PRO_0000449633		P0DTD1
+	Type	Positions	Description		ID		
+	chain	13-1273	Spike glycoprotein		PRO_0000449646		P0DTC2
+	chain	13-685	Spike protein S1  1 		PRO_0000449647		P0DTC2
+	chain	686-1273	Spike protein S2  1 		PRO_0000449648		P0DTC2
+	chain	816-1273	Spike protein S2'  1 		PRO_0000449649		P0DTC2

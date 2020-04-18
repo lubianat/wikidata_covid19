@@ -1,0 +1,9 @@
+
+Q90012262|P527|Q90082228|P1114|3|S248|Q47196990|S7718|"CPX-5682"|S813|+2020-04-10T00:00:00Z/11|S854|"ftp://ftp.ebi.ac.uk/pub/databases/intact/complex/current/complextab"|S7793|"sars-cov-2.tsv"
+Q90012262|P527|Q90081967|P1114|3|S248|Q47196990|S7718|"CPX-5682"|S813|+2020-04-10T00:00:00Z/11|S854|"ftp://ftp.ebi.ac.uk/pub/databases/intact/complex/current/complextab"|S7793|"sars-cov-2.tsv"
+Q90012266|P527|Q87917584|P1114|4|S248|Q47196990|S7718|"CPX-5686"|S813|+2020-04-10T00:00:00Z/11|S854|"ftp://ftp.ebi.ac.uk/pub/databases/intact/complex/current/complextab"|S7793|"sars-cov-2.tsv"
+Q90012260|P527|Q301630|P1114|1|S248|Q47196990|S7718|"CPX-5683"|S813|+2020-04-10T00:00:00Z/11|S854|"ftp://ftp.ebi.ac.uk/pub/databases/intact/complex/current/complextab"|S7793|"sars-cov-2.tsv"
+Q90012260|P527|Q90012262|P1114|1|S248|Q47196990|S7718|"CPX-5683"|S813|+2020-04-10T00:00:00Z/11|S854|"ftp://ftp.ebi.ac.uk/pub/databases/intact/complex/current/complextab"|S7793|"sars-cov-2.tsv"
+Q90012261|P527|Q301630|P1114|2|S248|Q47196990|S7718|"CPX-5684"|S813|+2020-04-10T00:00:00Z/11|S854|"ftp://ftp.ebi.ac.uk/pub/databases/intact/complex/current/complextab"|S7793|"sars-cov-2.tsv"
+Q90012261|P527|Q21124449|P1114|2|S248|Q47196990|S7718|"CPX-5684"|S813|+2020-04-10T00:00:00Z/11|S854|"ftp://ftp.ebi.ac.uk/pub/databases/intact/complex/current/complextab"|S7793|"sars-cov-2.tsv"
+Q90012261|P527|Q90012262|P1114|2|S248|Q47196990|S7718|"CPX-5684"|S813|+2020-04-10T00:00:00Z/11|S854|"ftp://ftp.ebi.ac.uk/pub/databases/intact/complex/current/complextab"|S7793|"sars-cov-2.tsv"
