@@ -1,0 +1,10 @@
+CREATE
+LAST	P31	Q13442814
+LAST	Len	"A SARS-CoV-2-Human Protein-Protein Interaction Map Reveals Drug Targets and Potential Drug-Repurposing"
+LAST	Den	"journal article from 'bioRxiv' published in 2020"
+LAST	P356	"10.1101/2020.03.22.002386"
+LAST	P953	"https://www.biorxiv.org/content/10.1101/2020.03.22.002386v3"
+LAST	P304	"2020.03.22.002386"
+LAST	P577	+2020-03-27T00:00:00Z/11
+LAST	P1476	en:"A SARS-CoV-2-Human Protein-Protein Interaction Map Reveals Drug Targets and Potential Drug-Repurposing"
+LAST	P407	Q1860

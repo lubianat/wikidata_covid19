@@ -1,0 +1,73 @@
+CREATE
+LAST	Len	"Host translation inhibitor nsp1 [SARS-CoV-2]"
+LAST	Den	"protein of SARS-CoV-2"
+LAST	P31	Q78782478	P642	Q88174316	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+LAST	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+CREATE
+LAST	Len	"Non-structural protein 2 [SARS-CoV-2]"
+LAST	Den	"protein of SARS-CoV-2"
+LAST	P31	Q78782478	P642	Q88174316	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+LAST	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+CREATE
+LAST	Len	"Non-structural protein 3 [SARS-CoV-2]"
+LAST	Den	"protein of SARS-CoV-2"
+LAST	P31	Q78782478	P642	Q88174316	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+LAST	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+CREATE
+LAST	Len	"Non-structural protein 4 [SARS-CoV-2]"
+LAST	Den	"protein of SARS-CoV-2"
+LAST	P31	Q78782478	P642	Q88174316	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+LAST	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+Q87917582	Len	"3C-like proteinase [SARS-CoV-2]"
+Q87917582	Den	"protein of SARS-CoV-2"
+Q87917582	P31	Q78782478	P642	Q88174316	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+Q87917582	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+Q88656943	Len	"Non-structural protein 6 [SARS-CoV-2]"
+Q88656943	Den	"protein of SARS-CoV-2"
+Q88656943	P31	Q78782478	P642	Q88174316	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+Q88656943	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+CREATE
+LAST	Len	"Non-structural protein 7 [SARS-CoV-2]"
+LAST	Den	"protein of SARS-CoV-2"
+LAST	P31	Q78782478	P642	Q88174316	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+LAST	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+Q88659350	Len	"Non-structural protein 8 [SARS-CoV-2]"
+Q88659350	Den	"protein of SARS-CoV-2"
+Q88659350	P31	Q78782478	P642	Q88174316	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+Q88659350	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+CREATE
+LAST	Len	"Non-structural protein 9 [SARS-CoV-2]"
+LAST	Den	"protein of SARS-CoV-2"
+LAST	P31	Q78782478	P642	Q88174316	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+LAST	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+Q87917580	Len	"2'-O-methyltransferase [SARS-CoV-2]"
+Q87917580	Den	"protein of SARS-CoV-2"
+Q87917580	P31	Q78782478	P642	Q88174316	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+Q87917580	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+
+
+CREATE
+LAST	Len	"Non-structural protein 10 [SARS-CoV-2]"
+LAST	Den	"protein of SARS-CoV-2"
+LAST	P31	Q78782478	P642	Q88174316	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+LAST	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+CREATE
+LAST	Len	"RNA-directed RNA polymerase [SARS-CoV-2]"
+LAST	Den	"protein of SARS-CoV-2"
+LAST	P31	Q78782478	P642	Q88174316	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+LAST	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+CREATE
+LAST	Len	"Helicase [SARS-CoV-2]"
+LAST	Den	"protein of SARS-CoV-2"
+LAST	P31	Q78782478	P642	Q88174316	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+LAST	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+CREATE
+LAST	Len	"Proofreading exoribonuclease [SARS-CoV-2]"
+LAST	Den	"protein of SARS-CoV-2"
+LAST	P31	Q78782478	P642	Q88174316	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+LAST	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+CREATE
+LAST	Len	"Uridylate-specific endoribonuclease [SARS-CoV-2]"
+LAST	Den	"protein of SARS-CoV-2"
+LAST	P31	Q78782478	P642	Q88174316	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
+LAST	P703	Q82069695	S854	"https://covid-19.uniprot.org/uniprotkb/P0DTD1"	S813	+2020-04-10T00:00:00Z/11
