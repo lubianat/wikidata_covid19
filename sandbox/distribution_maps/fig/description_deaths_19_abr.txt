@@ -1,0 +1,2 @@
+Óbitos por COVID-19 por município no estado de São Paulo até o dia 19 abr de 2020. Gráfico em Python gerado a partir dos dados de [https://www.seade.gov.br/coronavirus/]. 
+Script disponível em https://github.com/lubianat/wikidata_covid19/tree/master/sandbox/distribution_maps
