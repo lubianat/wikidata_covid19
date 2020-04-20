@@ -10,14 +10,14 @@ def qs_from_doi(doi,full_link):
   response = requests.get(f'http://api.crossref.org/works/{doi}')
   info = response.json()['message']
   title = info['title'][0]
-try:
-    published_in = info['institution']['name']
-except:
-    published_in = info['short-container-title']
-try:
-    date_list = info['posted']['date-parts']
-except:
-    date_list = info['license'][0]['start']['date-parts']
+    try:
+        published_in = info['institution']['name']
+    except:
+        published_in = info['short-container-title']
+    try:
+        date_list = info['posted']['date-parts']
+    except:
+        date_list = info['license'][0]['start']['date-parts']
   date_str = '/'.join(map(str, date_list[0]))
   date = datetime.strptime(date_str, "%Y/%m/%d").strftime("+%Y-%m-%dT00:00:00Z/11")
   doi = info['URL'][18:]
