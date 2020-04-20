@@ -6,10 +6,10 @@ Just a quick-and-dirty function to generate QS from some papers.
 Not a lot of thought went into this, so it can certainly be improved. 
 I only sketched it up in 5 min to add some of the papers from BIOGrid to Wikidata.
 '''
-def qs_from_doi(doi,full_link):
-  response = requests.get(f'http://api.crossref.org/works/{doi}')
-  info = response.json()['message']
-  title = info['title'][0]
+def qs_from_doi(doi, full_link):
+    response = requests.get(f'http://api.crossref.org/works/{doi}')
+    info = response.json()['message']
+    title = info['title'][0]
     try:
         published_in = info['institution']['name']
     except:
@@ -18,10 +18,10 @@ def qs_from_doi(doi,full_link):
         date_list = info['posted']['date-parts']
     except:
         date_list = info['license'][0]['start']['date-parts']
-  date_str = '/'.join(map(str, date_list[0]))
-  date = datetime.strptime(date_str, "%Y/%m/%d").strftime("+%Y-%m-%dT00:00:00Z/11")
-  doi = info['URL'][18:]
-  print("CREATE\n" + 
+    date_str = '/'.join(map(str, date_list[0]))
+    date = datetime.strptime(date_str, "%Y/%m/%d").strftime("+%Y-%m-%dT00:00:00Z/11")
+    doi = info['URL'][18:]
+    print("CREATE\n" +
       'LAST|Len|' + '"' + title + '"\n' +
       'LAST|Den|' + '"'+ f"journal article from '{published_in}' published in 2020" + '"\n' +
       'LAST|P31|' + "Q13442814" + '\n' +
@@ -31,6 +31,7 @@ def qs_from_doi(doi,full_link):
       "LAST|P407|" + 'Q1860' + "\n"
       "LAST|P953|" + '"' + full_link + '"'
      )
+
 
 if __name__ == "__main__":
   qs_from_doi(
