@@ -1,0 +1,5 @@
+Target,Target ID,Comments
+ACE2,1614,Receptor on host cells that is exploited by some betacoronaviruses for viral entry. Engaged by SARS-CoV-2 spike protein as the first step towards infection of host cells.
+TMPRSS2,2421,"Involved in the activation of viral glycoproteins/viral entry across a range of viruses, including SARS-CoV-2. SARS-CoV-2 entry is partially blocked in vitro by the protease inhibitor camostat."
+"SARS-CoV-2 main protease, (MPro; 3C-like proteinase; nsp5)",3111,Inhibitors of this viral protease have the potential to block cleavage of nascent viral proteins as they are synthesised in host cells.
+"CD147 (basigin, HGNC:1116) ",n/a,"SARS-CoV-2 may utilise CD147 as an additional entry receptor to infect host cells. The anti-CD147 mAb, meplazumab, can block the interaction between CD147 and SARS-CoV-2 spike protein (bioRxiv preprint article, Wang et al. (2020) https://doi.org/10.1101/2020.03.14.988345). Already under clinical evaluation in NCT04275245."
