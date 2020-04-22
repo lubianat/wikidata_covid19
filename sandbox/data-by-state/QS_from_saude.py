@@ -13,7 +13,7 @@ today = date.today()
 
 def transform(table):
     nacional = pd.read_csv(table, sep=';')
-    yesterday_saude = yesterday.strftime("%d/%m/%Y")
+    yesterday_saude = yesterday.strftime("%Y-%m-%d")
     nacional_hoje = nacional.query("data == @yesterday_saude")
     dic = pd.read_csv("./dicionario.csv")
     full = pd.merge(nacional_hoje, dic, on="estado")
