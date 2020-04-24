@@ -51,9 +51,13 @@ browser.close()
 
 
 #Change name of the latest file in directory
-list_of_files = glob.glob(download_directory + '*csv') 
-print(list_of_files)
-latest_file = max(list_of_files, key=os.path.getctime)
-current = latest_file
-newname = download_directory + str(date.today()) + ".csv"
+#list_of_files = glob.glob(download_directory + '*csv') 
+#print(list_of_files)
+#latest_file = max(list_of_files, key=os.path.getctime)
+#current = latest_file
+
+#As of 21, april, the website changed the naming convention of the csvs to not be random anymore
+
+current = os.path.join(download_directory, "arquivo_geral.csv")
+newname = os.path.join(download_directory, f"{str(date.today())}.csv")
 os.rename(current,newname)
