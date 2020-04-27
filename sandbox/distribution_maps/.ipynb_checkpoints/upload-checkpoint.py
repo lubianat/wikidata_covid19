@@ -213,6 +213,8 @@ def main(*args):
         url = file_list
     else:
         url = [url]
+        
+    print(url)
 
     bot = UploadRobot(url, description=description, useFilename=use_filename,
                       keepFilename=keep_filename,
