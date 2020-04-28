@@ -1,0 +1,14 @@
+=={{int:filedesc}}==
+{{Information
+|description={{pt|1=Óbitos por COVID-19 por município no estado de São Paulo até o dia 27 abr de 2020.  Gráfico em Python gerado a partir dos dados de [https://www.seade.gov.br/coronavirus/]. Script disponível em github.com/lubianat/wikidata_covid19/tree/master/sandbox/distribution_maps}}.
+|date=2020-04-28
+|source={{own}}
+|author=[[User:TiagoLubiana|TiagoLubiana]]
+|permission=
+|other versions=
+}}
+
+=={{int:license-header}}==
+{{self|cc-by-sa-4.0}}
+
+[[Category:Maps about the COVID-19 pandemic in São Paulo (state)]]
