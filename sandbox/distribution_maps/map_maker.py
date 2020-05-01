@@ -70,15 +70,15 @@ rr = MapScraper(
     shapefile="../../../estados_shapes/unzipped/14MUE250GC_SIR.shp",
     name = "RR")
 
-rs = MapScraper(
-    url="http://ti.saude.rs.gov.br/covid19/",
-    shapefile="../../../estados_shapes/unzipped/43MUE250GC_SIR.shp",
-    name = "RS")
+#rs = MapScraper(
+#    url="http://ti.saude.rs.gov.br/covid19/",
+#    shapefile="../../../estados_shapes/unzipped/43MUE250GC_SIR.shp",
+#    name = "RS")
 
 
 ma.calls()
 
 rr.calls()
 
-rs.calls()
+#rs.calls()
 
