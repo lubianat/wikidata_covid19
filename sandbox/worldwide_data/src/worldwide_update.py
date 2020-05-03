@@ -19,7 +19,7 @@ def create_qs():
     # The following countries appear to be updated manually from more specific sources.
     idx = recent['Country'].isin(['US', 'United Kingdom', 'France', 'Sweden', 'Brazil', 'Netherlands',
                                  'China', 'Italy', 'Spain', 'Germany', 'Iran', 'Mexico', 'Argentina',
-                                 'Canada', 'Spain', 'Norway', 'Portugal', 'Tunisia', 'Uruguay'])
+                                 'Canada', 'Spain', 'Norway', 'Uruguay'])
     not_manual = recent[~idx]
 
     yesterday_wdt = yesterday.strftime("+%Y-%m-%dT00:00:00Z/11")
