@@ -25,7 +25,7 @@ class MapScraper:
     def transform(self, html_table):
         estado = pd.read_html(str(html_table))[0]
         # This rename line is very ugly but it looks necessary to deal with the states I got.
-        estado.rename({'Cidade': 'Municipio', 'Unnamed: 0': 'Municipio'}, axis=1, inplace=True)
+        estado.rename({'Cidade': 'Municipio', 'Nome do município': 'Municipio', 'Confir-mados':'Confirmados'}, axis=1, inplace=True)
         estado.replace('-', 0, inplace=True)
         estado['Municipio'] = estado['Municipio'].str.replace(r'\d+\.\s', '').str.upper()
         mapa_dos_municipios = gpd.read_file(self.shapefile)
@@ -62,12 +62,12 @@ class MapScraper:
 
 ma = MapScraper(
     url="https://www.corona.ma.gov.br/",
-    shapefile="../../../estados_shapes/unzipped/21MUE250GC_SIR.shp",
+    shapefile="./shapefiles/21MUE250GC_SIR.shp",
     name = "MA")
 
 rr = MapScraper(
     url="https://roraimacontraocorona.rr.gov.br/winner/public/mapa.xhtml",
-    shapefile="../../../estados_shapes/unzipped/14MUE250GC_SIR.shp",
+    shapefile="./shapefiles/14MUE250GC_SIR.shp",
     name = "RR")
 
 #rs = MapScraper(
