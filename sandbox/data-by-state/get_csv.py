@@ -60,5 +60,5 @@ browser.close()
 today = date.today().strftime("%Y%m%d")
 
 current = os.path.join(download_directory, f'DT_PAINEL_COVIDBR_{today}.xlsx')
-newname = os.path.join(download_directory, f"{str(date.today())}.csv")
+newname = os.path.join(download_directory, f"{str(date.today())}.xlsx")
 os.rename(current,newname)
