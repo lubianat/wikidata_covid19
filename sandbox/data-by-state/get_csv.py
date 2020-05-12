@@ -2,7 +2,7 @@ from selenium import webdriver
 import os
 import glob
 import time
-from datetime import date
+from datetime import date, timedelta
 import argparse
 
 '''
@@ -18,7 +18,7 @@ change the name of the newest downloaded file to match the day it was retrived.
 # It can be improved for usability.
 parser = argparse.ArgumentParser(description='Argparse to pass commands via command line')
 parser.add_argument("--downdir",
-                    default='~/Documentos/Wikidata/wikidata_covid19/sandbox/data-by-state/Saude_csvs/',
+                    default='/home/jvfe/Documentos/Wikidata/wikidata_covid19/sandbox/data-by-state/Saude_csvs/',
                     help="The directory to download the files to")
 parser.add_argument("--topen",
                     default=5,
@@ -39,7 +39,7 @@ profile.set_preference('browser.download.manager.showWhenStarting', False)
 #File pathing for download dir could be improved
 profile.set_preference('browser.download.dir', download_directory)
 #Don't ask permission to download
-profile.set_preference("browser.helperApps.neverAsk.saveToDisk","text/csv")
+profile.set_preference("browser.helperApps.neverAsk.saveToDisk","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
 
 browser = webdriver.Firefox(profile)
@@ -57,7 +57,8 @@ browser.close()
 #current = latest_file
 
 #As of 21, april, the website changed the naming convention of the csvs to not be random anymore
+today = date.today().strftime("%Y%m%d")
 
-current = os.path.join(download_directory, "arquivo_geral.csv")
+current = os.path.join(download_directory, f'DT_PAINEL_COVIDBR_${today}.xlsx')
 newname = os.path.join(download_directory, f"{str(date.today())}.csv")
 os.rename(current,newname)

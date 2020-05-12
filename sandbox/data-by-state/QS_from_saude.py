@@ -12,12 +12,14 @@ today = date.today()
 # and merges it with the local dictionary of Qids.
 
 def transform(table):
-    nacional = pd.read_csv(table, sep=';')
+    nacional = pd.read_excel(table)
     yesterday_saude = yesterday.strftime("%Y-%m-%d")
     nacional_hoje = nacional.query("data == @yesterday_saude")
     dic = pd.read_csv("./dicionario.csv")
     full = pd.merge(nacional_hoje, dic, on="estado")
-    return(full)
+    #This seems to be the most effective way to get state-level data, not city-level.
+    only_estados = full[full['codmun'].isnull()]
+    return(only_estados)
 
 # The following function generates the QS from the transformed
 # table, then prints it to stdout.
@@ -28,16 +30,15 @@ def generate_qs(full):
     today_wdt = today.strftime("+%Y-%m-%dT00:00:00Z/11")
     for index, row in full.iterrows():
         print(
-      row['item'] + "|P1603|" + str(int(row['casosAcumulados'])) + "|P585|" + yesterday_wdt + "|S854|" + '"' + "https://covid.saude.gov.br/" + '"' +
+      row['item'] + "|P1603|" + str(int(row['casosAcumulado'])) + "|P585|" + yesterday_wdt + "|S854|" + '"' + "https://covid.saude.gov.br/" + '"' +
             "|S813|" + today_wdt + "\n" +
-      row['item'] + "|P1120|" + str(int(row['obitosAcumulados'])) + "|P585|" + yesterday_wdt + "|S854|" + '"' + "https://covid.saude.gov.br/" + '"' +
+      row['item'] + "|P1120|" + str(int(row['obitosAcumulado'])) + "|P585|" + yesterday_wdt + "|S854|" + '"' + "https://covid.saude.gov.br/" + '"' +
             "|S813|" + today_wdt  
         )
 
-
 # All function calls
 def main():
-    today_data = f"./Saude_csvs/{str(today)}.csv"
+    today_data = f"./Saude_csvs/{str(today)}.xlsx"
     full = transform(today_data)
     generate_qs(full)
 
