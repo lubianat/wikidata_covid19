@@ -59,6 +59,6 @@ browser.close()
 #As of 21, april, the website changed the naming convention of the csvs to not be random anymore
 today = date.today().strftime("%Y%m%d")
 
-current = os.path.join(download_directory, f'DT_PAINEL_COVIDBR_${today}.xlsx')
+current = os.path.join(download_directory, f'DT_PAINEL_COVIDBR_{today}.xlsx')
 newname = os.path.join(download_directory, f"{str(date.today())}.csv")
 os.rename(current,newname)
