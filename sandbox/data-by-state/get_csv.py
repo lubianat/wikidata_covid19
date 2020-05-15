@@ -18,10 +18,10 @@ change the name of the newest downloaded file to match the day it was retrived.
 # It can be improved for usability.
 parser = argparse.ArgumentParser(description='Argparse to pass commands via command line')
 parser.add_argument("--downdir",
-                    default='/home/jvfe/Documentos/Wikidata/wikidata_covid19/sandbox/data-by-state/Saude_csvs/',
+                    default='~/Documentos/Wikidata/wikidata_covid19/sandbox/data-by-state/Saude_csvs/',
                     help="The directory to download the files to")
 parser.add_argument("--topen",
-                    default=5,
+                    default=10,
                     help="Time to load the page in selenium")
 parser.add_argument("--tclose",
                     default=10,
@@ -45,7 +45,7 @@ profile.set_preference("browser.helperApps.neverAsk.saveToDisk","application/vnd
 browser = webdriver.Firefox(profile)
 browser.get("https://covid.saude.gov.br/")
 time.sleep(time_to_open) #This line is necessary for bad internet service such as the one I have, but unecessary otherwise.
-browser.find_element_by_xpath('/html/body/app-root/ion-app/ion-router-outlet/app-home/ion-content/div[1]/div[2]/ion-button').click()
+browser.find_element_by_css_selector('div.no-shadow:nth-child(2) > ion-button:nth-child(1)').click()
 time.sleep(time_to_close) #To let it finish downloading before closing instance.
 browser.close()
 
@@ -59,6 +59,6 @@ browser.close()
 #As of 21, april, the website changed the naming convention of the csvs to not be random anymore
 today = date.today().strftime("%Y%m%d")
 
-current = os.path.join(download_directory, f'DT_PAINEL_COVIDBR_{today}.xlsx')
+current = os.path.join(download_directory, f'HIST_PAINEL_COVIDBR_{today}.xlsx')
 newname = os.path.join(download_directory, f"{str(date.today())}.xlsx")
 os.rename(current,newname)
