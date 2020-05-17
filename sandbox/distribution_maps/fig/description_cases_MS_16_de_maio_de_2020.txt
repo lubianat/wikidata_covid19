@@ -1,0 +1,16 @@
+=={{int:filedesc}}==
+{{Information
+|description={{pt|1=Casos de COVID-19 por município no estado de MS até o dia 16 de maio de 2020 de 2020.
+Gráfico em Python gerado a partir dos dados de [https://covid.saude.gov.br/].
+Script disponível em github.com/lubianat/wikidata_covid19/tree/master/sandbox/distribution_maps}}.
+|date=2020-05-17
+|source={{own}}
+|author=[[User:TiagoLubiana|TiagoLubiana]] and [[User:Jvcavv]]
+|permission=
+|other versions=
+}}
+
+=={{int:license-header}}==
+{{self|cc-by-sa-4.0}}
+
+[[Category:COVID-19_pandemic_in_Brazil_by_state]]
