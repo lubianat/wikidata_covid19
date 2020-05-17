@@ -1,8 +1,0 @@
-#LWP-Cookies-2.0
-Set-Cookie3: centralauth_Token=8ea8d1de7b71b073ff836557fbc683af; path="/"; domain=".commons.wikimedia.org"; path_spec; secure; expires="2021-05-05 10:46:39Z"; HttpOnly=None; version=0
-Set-Cookie3: centralauth_User=TiagoLubiana; path="/"; domain=".commons.wikimedia.org"; path_spec; secure; expires="2021-05-05 10:46:39Z"; HttpOnly=None; version=0
-Set-Cookie3: forceHTTPS=true; path="/"; domain=".commons.wikimedia.org"; path_spec; expires="2020-06-04 10:46:39Z"; HttpOnly=None; version=0
-Set-Cookie3: WMF-Last-Access="05-May-2020"; path="/"; domain="commons.wikimedia.org"; path_spec; secure; expires="2020-06-06 00:00:00Z"; HttpOnly=None; version=0
-Set-Cookie3: commonswikiUserID=3899251; path="/"; domain="commons.wikimedia.org"; path_spec; secure; expires="2021-05-05 10:46:39Z"; HttpOnly=None; version=0
-Set-Cookie3: commonswikiUserName=TiagoLubiana; path="/"; domain="commons.wikimedia.org"; path_spec; secure; expires="2021-05-05 10:46:39Z"; HttpOnly=None; version=0
-Set-Cookie3: loginnotify_prevlogins="2020-cjo9yh-oure4g89evnvzvy33xth7uiv9vpph2r"; path="/"; domain="commons.wikimedia.org"; path_spec; secure; expires="2020-11-01 10:46:39Z"; HttpOnly=None; version=0
