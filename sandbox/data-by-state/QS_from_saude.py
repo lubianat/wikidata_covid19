@@ -1,5 +1,5 @@
+import requests
 import pandas as pd
-import datetime
 from datetime import date, timedelta
 
 # This script is to be run after get_csv.py
@@ -7,6 +7,15 @@ from datetime import date, timedelta
 # Setting global variables for today and yesterday
 yesterday = date.today() - timedelta(days=1)
 today = date.today()
+
+# Makes a request to get the url of the most recent data
+
+def get_data():
+    headers = {"X-Parse-Application-Id" : "unAFkcaNDeXajurGB7LChj8SgQYS2ptm"}
+    req = requests.get('https://xx9p7hp1p7.execute-api.us-east-1.amazonaws.com/prod/PortalGeral', 
+              params = headers)
+    url = req.json()['results'][0]['arquivo']['url']
+    return(url)
 
 # The following function reads the table, filters it
 # and merges it with the local dictionary of Qids.
@@ -38,10 +47,9 @@ def generate_qs(full):
 
 # All function calls
 def main():
-    today_data = f"./Saude_csvs/{str(today)}.xlsx"
+    today_data = get_data()
     full = transform(today_data)
     generate_qs(full)
 
-
-if __name__ == "__main__":
+if __name__=="__main__":
     main()
