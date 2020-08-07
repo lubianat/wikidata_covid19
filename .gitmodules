@@ -1,0 +1,3 @@
+[submodule "sandbox/wikicovid-showcase"]
+	path = sandbox/wikicovid-showcase
+	url = https://github.com/jvfe/wikicovid-showcase
