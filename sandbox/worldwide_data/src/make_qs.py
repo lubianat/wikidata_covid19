@@ -39,7 +39,7 @@ def main():
     today_format = today.strftime("%Y-%m-%d")
 
     with open(f'../data/{today_format}.qs', 'w') as file:
-        for index, row in table_with_outdated_items.iterrows():
+        for index, row in table_with_items_to_update.iterrows():
             print(
                   row['item'] + "|P1603|" + str(int(row['Confirmed'])) + "|P585|" + yesterday_in_wikidata + "|S854|" + '"' +
                         "https://github.com/datasets/covid-19" + '"' +
