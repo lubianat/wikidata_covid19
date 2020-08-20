@@ -1,0 +1,224 @@
+---
+title: "Languages of COVID-19"
+author: "Tiago Lubiana"
+date: "8/15/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+Wikidata enables multilangual integration. Let's see the usage of different langagues for concepts related to COVID-19. 
+
+First, lets query Wikidata for the counts of languages of 
+ITEMS related to either
+
+* The virus,
+* The pandemic or 
+* The disease
+
+```{r}
+# install.packages("WikidataQueryServiceR")
+library(WikidataQueryServiceR)
+library(ggplot2)
+library(dplyr)
+library(forcats)
+
+collect <- function(language_colector, df) {
+  new = head(df)$lang
+  return(unique(c(language_colector, new)))
+
+} 
+
+plot_query <- function(df, y_limit, title) {
+  
+  mini_df <- head(df)
+  mini_df$lang <- as.factor(mini_df$lang)
+
+  mini_df %>%
+    mutate(lang = fct_reorder(lang, desc(count))) %>%
+    ggplot(aes(x = lang, y = count))+ 
+      geom_point() + 
+      geom_text(aes(label=count),hjust=0.5, vjust=-1) +
+    ylim(0, y_limit) +
+    ylab("# uses of each language") + 
+    xlab("") +
+    theme_classic() + 
+    theme(plot.title = element_text(hjust = 0.5),
+          axis.title = element_text(size=12),
+          axis.text.x = element_text(size=14),
+          axis.text.y = element_blank(),
+          axis.ticks.y = element_blank()) +
+    labs(title = title)
+
+}
+
+# Initializing the language colector
+language_colector <- c()
+```
+
+```{r echo=FALSE}
+# Query URL = https://w.wiki/ZdJ
+
+query = '# Core concept as a SUBJECT of the triple
+# Language availability of OBJECT
+
+SELECT ?lang (COUNT(*) AS ?count) WHERE {
+  {wd:Q84263196 ?prop ?x.} UNION {wd:Q82069695 ?prop ?x.} UNION {wd:Q81068910 ?prop ?x.}
+  ?x rdfs:label ?label.
+  BIND(LANG(?label) AS ?lang)
+  }
+GROUP BY ?lang
+ORDER BY DESC(?count)
+'
+
+items_as_object <- query_wikidata(query)
+
+
+language_colector <- collect(language_colector, items_as_object)
+
+plot_query(items_as_object, 350, "Language of items (COVID-19 as subject)")
+p1 <- plot_query(items_as_object, 350, "Language of items (COVID-19 as subject)")
+ 
+```
+
+Now the same, but with the core concept as OBJECT of the triple. 
+
+```{r}
+# Query URL: https://w.wiki/Zd3
+# Core concept as a OBJECT of the triple
+# Language availability of SUBJECT
+
+query = 'SELECT ?lang (COUNT(*) AS ?count) WHERE {
+  {?x ?prop wd:Q84263196.} UNION {?x ?prop wd:Q82069695.} UNION {?x ?prop wd:Q81068910.}
+  ?x rdfs:label ?label.
+  BIND(LANG(?label) AS ?lang)
+  }
+GROUP BY ?lang
+ORDER BY DESC(?count)
+'
+
+items_as_subject <- query_wikidata(query)
+
+
+language_colector <- collect(language_colector, items_as_subject)
+plot_query(items_as_subject, 80000, "Language of items (COVID-19 as object)")
+p2 <- plot_query(items_as_subject, 80000, "Language of items (COVID-19 as object)")
+
+```
+
+Now lets look at the language coverage of PROPERTIES. 
+
+
+```{r}
+# Query URL: https://w.wiki/Zd4
+
+query = '# Core concept as a SUBJECT of the triple
+# Language availability of PROPERTY
+
+SELECT ?lang (COUNT(*) AS ?count) WHERE {
+  {wd:Q84263196 ?prop ?x.} UNION {wd:Q82069695 ?prop ?x.} UNION {wd:Q81068910 ?prop ?x.}
+  ?p wikibase:directClaim ?prop.
+  ?p rdfs:label ?label.
+  BIND(LANG(?label) AS ?lang)
+  }
+GROUP BY ?lang
+ORDER BY DESC(?count)
+'
+
+properties_when_core_are_subjects <- query_wikidata(query)
+
+language_colector <- collect(language_colector, properties_when_core_are_subjects)
+plot_query(properties_when_core_are_subjects, 800, "Language of properties (COVID-19 as subject)")
+p3 <- plot_query(properties_when_core_are_subjects, 800, "Language of properties (COVID-19 as subject)")
+
+```
+
+```{r}
+# Query URL: https://w.wiki/Zd6
+# This query is too heavy for the API call
+# The result (https://w.wiki/ZdA) was manually downloaded
+collect <- function(language_colector, df) {
+  new = head(df)$lang
+  return(unique(c(language_colector, new)))
+
+} 
+properties_when_core_are_objects <- read.csv("query_for_properties.csv", stringsAsFactors = FALSE)
+
+language_colector <- collect(language_colector, properties_when_core_are_objects)
+plot_query(properties_when_core_are_objects, 80000, "Language of properties (COVID-19 as object)")
+p4 <- plot_query(properties_when_core_are_objects, 80000, "Language of properties (COVID-19 as object)")
+```
+Now let's put all plots together:
+
+```{r}
+library(patchwork)
+p = (p1 | p2) / (p3 | p4)
+p
+```
+
+
+Almost done! Now we need to add a legend for each language in the plot. 
+
+
+
+
+```{r}
+# Query URL = https://w.wiki/ZdP
+
+
+
+query = '# Language codes
+SELECT ?langLabel ?langcode
+WHERE
+{
+  ?lang wdt:P424 ?langcode .
+  ?lang wdt:P31/wd:p279* wd:Q34770 .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}'
+  
+  language_codes <- query_wikidata(query)
+  
+  language_codes <-
+    language_codes %>% filter(langcode %in% language_colector) %>% arrange(langcode)
+  
+  
+  update_description <- function(id, description, code, language_name, n_of_languages) {
+      half_n_of_languages <- ceiling(n_of_languages / 2)
+      description <- paste0(description, code, ": ", language_name)
+    
+      if (id != n_of_languages & id != half_n_of_languages) {
+        description <- paste0(description," | ")
+      } 
+      
+      if (id == half_n_of_languages) {
+         description <- paste0(description," \n")
+      } 
+      return(description)
+
+    
+    }
+  
+  n_of_languages <- nrow(language_codes)
+
+  description = ""
+  for (id in 1:n_of_languages) {
+    code = language_codes$langcode[id]
+    language_name = language_codes$langLabel[id]
+    print(id)
+    description = update_description(id, description, code, language_name, n_of_languages)
+
+  }
+  print(description)
+  p = p + plot_annotation(caption = description) & 
+  theme(plot.caption = element_text(size = 12))
+
+  ggsave("use_per_language.png", p,  width = 10, height = 6)
+
+```
+
+
+
