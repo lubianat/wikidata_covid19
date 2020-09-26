@@ -7,8 +7,45 @@ Generates Quickstatements commands to update COVID-19 cases on Wikidata
 
 import pandas as pd
 from datetime import date, time, timedelta, datetime
-from check_last_update_for_country_items import get_timestamp_of_last_edits, convert_timestamp_to_time_until_now
 
+import requests	
+
+
+def convert_timestamp_to_time_until_now(timestamp):
+    time_in_datetime_format = datetime.strptime(timestamp,"%Y-%m-%dT%H:%M:%SZ")	
+    diff = datetime.now() - time_in_datetime_format	
+    return(diff)
+
+
+def get_timestamp_of_last_edits(list_of_qids):	
+
+    URL = "https://www.wikidata.org/w/api.php"	
+    titles_for_query = "|".join(list_of_qids)	
+
+    PARAMS = {	
+        "action": "query",	
+        "prop": "revisions",	
+        "titles": titles_for_query,	
+        "rvprop": "timestamp|user|comment|content",	
+        "rvslots": "main",	
+        "formatversion": "2",	
+        "format": "json"	
+    }	
+
+    S = requests.Session()	
+    R = S.get(url=URL, params=PARAMS)	
+    DATA = R.json()	
+    PAGES = DATA["query"]["pages"]	
+
+
+    page_to_timestamp = {}	
+
+    for page in PAGES:	
+        page_title = page["title"]	
+        timestamp_now = page["revisions"][0]['timestamp']	
+        page_to_timestamp[page_title] = timestamp_now	
+
+    return(page_to_timestamp)
 
 def main():
 
@@ -20,6 +57,8 @@ def main():
     datahub_table, date = get_most_recent_entries(full_datahub_table)
 
     country_outbreak_items = list(datahub_table["item"])
+
+    print("--- Retrieving outdated items ----")
 
     # Api only takes 50 at a time, so we have to cut it.
     table_with_outdated_items = retrieve_items_that_are_outdated(country_outbreak_items, datahub_table)
@@ -71,6 +110,7 @@ def retrieve_items_that_are_outdated(country_outbreak_items, datahub_table):
         outbreak_item_to_timestamp.update(get_timestamp_of_last_edits(chunk))
 
     datahub_table["timestamp_of_last_edit"] = datahub_table["item"].map(outbreak_item_to_timestamp)
+    print(datahub_table["timestamp_of_last_edit"])
     datahub_table["time_from_last_edit_until_now"] = datahub_table["timestamp_of_last_edit"].map(convert_timestamp_to_time_until_now)
 
     outdated_items = datahub_table[datahub_table["time_from_last_edit_until_now"] > timedelta(hours=23)]
