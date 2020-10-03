@@ -1,0 +1,1 @@
+Terms pasted from https://www.btb.termiumplus.gc.ca/publications/covid19-eng.html
