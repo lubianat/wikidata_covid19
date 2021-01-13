@@ -1,0 +1,1 @@
+59 23 * * * cd ~/Documents/wiki_related/wikidata_covid19/sandbox/wikipedia_case_import/ && python3 pywiki_import
