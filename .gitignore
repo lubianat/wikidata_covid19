@@ -136,3 +136,4 @@ node_modules/abbrev node_modules/ansi-regex node_modules/ansi-styles node_module
 */fig/*
 sandbox/worldwide_data/src/credentials.py
 */user-password.py
+*/apicache-py3/*
