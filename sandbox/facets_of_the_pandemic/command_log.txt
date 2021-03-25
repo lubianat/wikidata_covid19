@@ -1,0 +1,2 @@
+cp vaccinations.ipynb responses.ipynb
+sed -i 's/vaccination/response/g' responses.ipynb
